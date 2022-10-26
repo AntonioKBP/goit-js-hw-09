@@ -3,19 +3,21 @@ const stopBtn = document.querySelector('[data-stop]');
 
 startBtn.addEventListener('click', startBackGroundChange);
 stopBtn.addEventListener('click', stopBackGroundChange);
-
-// const myInterval = setInterval(() => {}, 1000);
-
-const myInterval = setInterval(startBackGroundChange, 1000);
+const delay = 1000;
+let myInterval;
+stopBtn.setAttribute('disabled', '');
 
 function startBackGroundChange() {
   startBtn.setAttribute('disabled', '');
-  document.body.style.backgroundColor = getRandomHexColor();
-  //   setInterval(myInterval);
+  stopBtn.removeAttribute('disabled', '');
+  myInterval = setInterval(() => {
+    document.body.style.backgroundColor = getRandomHexColor();
+  }, delay);
 }
 
 function stopBackGroundChange() {
   startBtn.removeAttribute('disabled', '');
+  stopBtn.setAttribute('disabled', '');
   clearInterval(myInterval);
 }
 
