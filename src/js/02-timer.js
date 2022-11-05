@@ -21,7 +21,7 @@ const options = {
     if (selectedDates[0] <= date) {
       Notiflix.Notify.failure('Please choose a date in the future');
     } else {
-      Notiflix.Notify.success('Красаучік');
+      Notiflix.Notify.success('Push Start to countdown');
 
       startBtn.removeAttribute('disabled', '');
       deadLine = selectedDates[0];
@@ -47,7 +47,6 @@ function startTimer() {
     } else {
       renderTime(time);
     }
-    console.log(time);
   }, 1000);
 }
 
