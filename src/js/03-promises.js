@@ -21,7 +21,7 @@ formRef.addEventListener('submit', onSubmitClick);
 
 function onSubmitClick(evt) {
   evt.preventDefault();
-  formElements = evt.currentTarget.elements;
+  const formElements = evt.currentTarget.elements;
   delayValue = Number(formElements.delay.value) * 1000;
   stepValue = Number(formElements.step.value) * 1000;
   amountValue = Number(formElements.amount.value);
