@@ -18,12 +18,15 @@ function createPromise(position, delay) {
 const formRef = document.querySelector('.form');
 
 formRef.addEventListener('submit', onSubmitClick);
+let delayValue;
+let stepValue;
+let amountValue;
 
 function onSubmitClick(evt) {
   evt.preventDefault();
 
-  delayValue = Number(evt.currentTarget.elements.delay.value) * 1000;
-  stepValue = Number(evt.currentTarget.elements.step.value) * 1000;
+  delayValue = Number(evt.currentTarget.elements.delay.value);
+  stepValue = Number(evt.currentTarget.elements.step.value);
   amountValue = Number(evt.currentTarget.elements.amount.value);
 
   for (let i = 1; i <= amountValue; i += 1) {
