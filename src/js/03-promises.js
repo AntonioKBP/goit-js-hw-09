@@ -21,10 +21,10 @@ formRef.addEventListener('submit', onSubmitClick);
 
 function onSubmitClick(evt) {
   evt.preventDefault();
-  const formElements = evt.currentTarget.elements;
-  delayValue = Number(formElements.delay.value) * 1000;
-  stepValue = Number(formElements.step.value) * 1000;
-  amountValue = Number(formElements.amount.value);
+
+  delayValue = Number(evt.currentTarget.elements.delay.value) * 1000;
+  stepValue = Number(evt.currentTarget.elements.step.value) * 1000;
+  amountValue = Number(evt.currentTarget.elements.amount.value);
 
   for (let i = 1; i <= amountValue; i += 1) {
     createPromise(i, delayValue)
